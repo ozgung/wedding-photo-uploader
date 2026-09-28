@@ -1,0 +1,56 @@
+[Unit]
+Description=Isolated wedding media validator
+
+[Service]
+User=wedding-validator
+Group=wedding-validator
+RootDirectory=/var/lib/wedding-validator/root
+MountAPIVFS=yes
+WorkingDirectory=/
+BindReadOnlyPaths=/usr
+BindReadOnlyPaths=/opt/wedding/.venv
+ExecStart=/opt/wedding/.venv/bin/python -I -B /app/validator_service.py
+StandardInput=socket
+StandardOutput=journal
+StandardError=journal
+Environment=PATH=/usr/bin:/bin OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+Environment=PYTHON_DOTENV_DISABLED=1
+PrivateNetwork=yes
+PrivateDevices=yes
+PrivateMounts=yes
+TemporaryFileSystem=/tmp:rw,nosuid,nodev,noexec,size=16M
+ProtectSystem=strict
+ProtectHome=yes
+ProtectProc=invisible
+ProcSubset=pid
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX
+RestrictNamespaces=yes
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@mount @reboot @swap @raw-io @debug
+UMask=0077
+RuntimeMaxSec=30
+TimeoutStopSec=2
+KillMode=control-group
+MemoryMax=384M
+MemorySwapMax=0
+LimitAS=402653184
+LimitCPU=15
+LimitNOFILE=64
+TasksMax=24
+CPUQuota=75%
+LimitCORE=0
+LogRateLimitIntervalSec=30s
+LogRateLimitBurst=20

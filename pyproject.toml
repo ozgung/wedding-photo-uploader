@@ -1,0 +1,17 @@
+[project]
+name = "wedding-photo-uploader"
+version = "0.1.0"
+description = "Private, mobile-first wedding photo and video uploader that saves guests' originals to Google Drive"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "httpx>=0.27,<1",
+  "python-dotenv>=1,<2", "pillow>=11,<13", "pillow-heif>=0.20,<2",
+  "google-auth>=2,<3", "google-auth-oauthlib>=1,<2", "google-api-python-client>=2,<3"
+]
+[dependency-groups]
+dev = ["pytest>=8,<10", "reportlab>=4,<5", "fonttools[woff]>=4,<5", "qrcode>=8,<9", "pypdf>=5,<7"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

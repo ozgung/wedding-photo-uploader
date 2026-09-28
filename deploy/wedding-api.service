@@ -1,0 +1,25 @@
+[Unit]
+Description=Wedding upload API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=wedding
+Group=wedding
+WorkingDirectory=/opt/wedding
+EnvironmentFile=/opt/wedding/.env
+ExecStart=/opt/wedding/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8766 --workers 1 --proxy-headers --forwarded-allow-ips=127.0.0.1 --no-access-log --limit-concurrency 64
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/wedding/data
+MemoryMax=192M
+CPUQuota=50%
+TasksMax=64
+
+[Install]
+WantedBy=multi-user.target

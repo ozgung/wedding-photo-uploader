@@ -1,0 +1,9 @@
+/* Theme: warm paper, plum accent. Override these tokens to restyle the page. */
+body{--accent:#835174;--accent-hover:#6d405f;--panel:#fff8ef;--panel-line:#eaded2;--field:#fffdf9;--color-purple:var(--accent);background:radial-gradient(circle at 12% 18%,#fff9e8 0,transparent 33%),radial-gradient(circle at 88% 78%,#f4e3ad80 0,transparent 32%),#f8efd7;display:flow-root;padding:0 12px}
+.page{background:#fff;border-radius:28px;border:1px solid #ffffffb3;box-shadow:0 8px 32px #42324f08;overflow:hidden;margin:22px auto;padding-bottom:28px}
+.monogram{visibility:hidden}.hero:before{width:145px;height:112px;top:-98px;left:-30px;opacity:.9}.eyebrow{margin-bottom:3px}.date{margin-top:5px}
+.upload-card{background:var(--panel);border:1px solid var(--panel-line);box-shadow:0 8px 26px #73568b09;border-radius:22px;position:relative;overflow:hidden}
+.upload-card:before{content:'';display:block;width:40px;height:4px;border-radius:4px;background:var(--accent);opacity:.45;margin:0 0 20px}
+.upload-card h2{font-size:23px}.primary{background:var(--accent);border-color:var(--accent);border-radius:14px;box-shadow:0 5px 13px #79558d20;min-height:56px}.primary:hover:not(:disabled),.primary:active:not(:disabled){background:var(--accent-hover)}
+input[type=text]{background:#fff;border-color:var(--panel-line);border-radius:12px}.file-row{background:var(--field)}.progress span{background:var(--accent)}.success-icon{background:var(--field);color:var(--accent)}.signoff{color:var(--accent)}
+@media(max-width:720px){body{--panel:#fffcf7}.page{margin:12px auto;padding:24px 20px 28px;border-radius:26px}.upload-card{padding:22px 18px}}

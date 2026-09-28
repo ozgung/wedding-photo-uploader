@@ -1,0 +1,16 @@
+[Unit]
+Description=Private wedding validator submission socket
+
+[Socket]
+ListenStream=/run/wedding-validator/submit.sock
+SocketUser=root
+SocketGroup=wedding
+SocketMode=0660
+DirectoryMode=0755
+Accept=yes
+MaxConnections=1
+Backlog=1
+RemoveOnStop=yes
+
+[Install]
+WantedBy=sockets.target

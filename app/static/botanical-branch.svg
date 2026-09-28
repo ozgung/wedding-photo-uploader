@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170" fill="none">
+  <defs>
+    <g id="flower" stroke="#a993b6" stroke-width="1.1">
+      <path d="M0 0C-13-2-15-13-8-15C-3-17 0-10 0-7C1-15 9-18 12-12C16-6 8-2 4 0C13-1 18 6 12 10C7 14 2 7 0 3C1 13-6 17-10 11C-14 6-7 1 0 0Z" fill="#fffdfa"/>
+      <circle r="2.3" fill="#c7ac70" stroke="none"/>
+    </g>
+  </defs>
+  <!-- Every offshoot begins on an explicit junction of the main stem. -->
+  <g stroke="#879269" stroke-width="1.35" stroke-linecap="round">
+    <path d="M-5-8Q9 14 25 30Q40 45 52 58Q68 72 83 87Q106 109 127 122Q149 137 177 145"/>
+    <path d="M25 30Q46 17 67 20M52 58Q31 77 33 99M83 87Q91 55 115 49M127 122Q144 106 166 105"/>
+    <path d="M52 58Q69 51 80 61Q65 66 52 58Z" fill="#e2e8d6"/>
+    <path d="M83 87Q62 88 60 75Q77 73 83 87Z" fill="#e2e8d6"/>
+    <path d="M127 122Q113 138 99 132Q106 120 127 122Z" fill="#e2e8d6"/>
+    <path d="M25 30Q11 44 10 55Q28 50 25 30Z" fill="#e2e8d6"/>
+  </g>
+  <use href="#flower" transform="translate(67 20) scale(.72)"/>
+  <use href="#flower" transform="translate(33 99) rotate(-25) scale(.8)"/>
+  <use href="#flower" transform="translate(115 49) rotate(20)"/>
+  <use href="#flower" transform="translate(166 105) scale(.7)"/>
+  <use href="#flower" transform="translate(177 145) rotate(30) scale(.55)"/>
+</svg>

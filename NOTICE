@@ -1,0 +1,10 @@
+Wedding Photo Uploader is released under the MIT License (see LICENSE).
+
+Bundled third-party material:
+
+- DM Sans — Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts).
+  SIL Open Font License 1.1: app/static/fonts/DM-Sans-OFL.txt, public/oauth-pages/assets/DM-Sans-OFL.txt
+- Cormorant — Copyright 2015 the Cormorant Project Authors (https://github.com/CatharsisFonts/Cormorant).
+  SIL Open Font License 1.1: app/static/fonts/Cormorant-OFL.txt
+
+The SVG ornaments in app/static and public/oauth-pages/assets were drawn for this project and are covered by the MIT License.

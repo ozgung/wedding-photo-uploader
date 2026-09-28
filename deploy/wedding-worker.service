@@ -1,0 +1,29 @@
+[Unit]
+Description=Wedding private media validation and Drive transfer
+After=network-online.target wedding-validator.socket
+Wants=network-online.target
+Requires=wedding-validator.socket
+
+[Service]
+User=wedding
+Group=wedding
+WorkingDirectory=/opt/wedding
+EnvironmentFile=/opt/wedding/.env
+ExecStart=/opt/wedding/.venv/bin/python -m app.worker
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/wedding/data
+MemoryMax=500M
+CPUQuota=75%
+TasksMax=64
+RestrictNamespaces=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+[Install]
+WantedBy=multi-user.target
