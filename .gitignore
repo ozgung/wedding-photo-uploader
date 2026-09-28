@@ -9,3 +9,6 @@ tmp/
 *.pyc
 
 .DS_Store
+.env.*
+!.env.example
+*.bak

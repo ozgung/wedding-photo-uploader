@@ -94,4 +94,4 @@ To restyle the page, edit the colour tokens in `app/static/theme.css`.
 
 ## License
 
-[MIT](LICENSE). Bundled fonts (DM Sans, Cormorant) are under the SIL Open Font License; see [NOTICE](NOTICE).
+[MIT](LICENSE). Bundled fonts (DM Sans, Cormorant Garamond) are under the SIL Open Font License; see [NOTICE](NOTICE).

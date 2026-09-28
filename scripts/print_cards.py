@@ -42,7 +42,7 @@ def make_card(path, qr, scale, proof, title, when, main, second=None):
         c.saveState(); c.translate(x,y); c.scale(s,s)
         c.setStrokeColor(HexColor(OLIVE)); c.setLineWidth(.9)
         p=c.beginPath(); p.moveTo(0,-7); p.curveTo(-2,-1,-10,-1,-10,6); p.curveTo(-10,13,-3,13,0,7); p.curveTo(3,13,10,13,10,6); p.curveTo(10,-1,2,-1,0,-7); c.drawPath(p); c.restoreState()
-    random.seed(26)
+    random.seed(12)
     for i in range(12):
         x=12+i*8; y=h-8-random.randrange(8,50)
         c.setStrokeColor(HexColor('#92997b'));c.setLineWidth(.4)

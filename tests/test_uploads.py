@@ -20,7 +20,7 @@ def setup(tmp_path):
     token=tmp_path/'google.json';token.write_text('{}')
     s=Settings(data_dir=tmp_path/'data',origin='http://localhost',dev=True,enabled=True,
         invite_hash=digest('test-invitation'),event_slug='alex-sam-120627',turnstile_sitekey='test',turnstile_secret='test',
-        google_token=token,drive_root='root',close_at='2030-10-04T00:00:00+03:00',min_free=0,chunk_size=256)
+        google_token=token,drive_root='root',close_at='2030-06-20T00:00:00+00:00',min_free=0,chunk_size=256)
     app=create_app(s)
     with TestClient(app,base_url=s.origin) as client:
         with db.connection(s,True) as c:c.execute('INSERT INTO sessions VALUES(?,?,?,?,?,?)',('guest1',digest('cookie1'),'csrf1',s.invite_hash,time.time(),time.time()+3600))
@@ -109,7 +109,7 @@ def test_concurrent_reservations_cannot_exceed_budget(setup):
 
 def test_closing_and_disabled(setup):
     c,s=setup;s.enabled=False;assert create(c).status_code==503
-    s.enabled=True;s.close_at='2020-10-04T00:00:00+03:00'
+    s.enabled=True;s.close_at='2020-06-20T00:00:00+00:00'
     assert c.get('/api/config').json()['closed'] is True
     assert create(c).status_code==410
 

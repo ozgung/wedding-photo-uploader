@@ -20,7 +20,7 @@ root=Path('tmp/browser-test').resolve();root.mkdir(parents=True,exist_ok=True)
 Image.new('RGB',(80,60),'#879269').save(root/'sample.jpg')
 s=Settings(origin='http://127.0.0.1:8766',dev=True,enabled=True,data_dir=root/'data',
     google_token=root/'token.json',drive_root='LOCAL-TEST',invite_hash=digest('LOCAL-TEST'),
-    turnstile_sitekey='not-used',turnstile_secret='not-used',min_free=0,close_at='2030-01-01T00:00:00+03:00')
+    turnstile_sitekey='not-used',turnstile_secret='not-used',min_free=0,close_at='2030-06-20T00:00:00+00:00')
 app=create_app(s);original=app.router.lifespan_context;stop=threading.Event()
 class LocalDrive:
     def __init__(self,settings):pass
